@@ -28,6 +28,12 @@ LiteSignInBedrock 是 [LiteSignIn](https://www.spigotmc.org/resources/79584/) �
 - 主页面显示今日状态、连续签到、累计签到、本月累计、补签卡数量和今日排名。
 - 一键签到，检查 LiteSignIn 的权限、禁用世界、在线时长和重复签到限制。
 
+## 功能演示
+
+<p align="center">
+  <img src="img/202610294003846.gif" alt="LiteSignInBedrock 功能演示" width="800">
+</p>
+
 ## 兼容范围与依赖
 
 | 项目 | 要求与范围 |

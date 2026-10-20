@@ -28,6 +28,12 @@ LiteSignInBedrock is a Bukkit addon for [LiteSignIn](https://www.spigotmc.org/re
 - The main page displays today's sign-in status, consecutive sign-in streak, total sign-in days, sign-ins this month, available retroactive sign-in cards, and today's ranking.
 - One-click sign-in, with checks for LiteSignIn permissions, disabled worlds, online time requirements, and duplicate sign-ins.
 
+## Demo
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/che11111/LiteSignInBedrock/main/img/202610294003846.gif" alt="LiteSignInBedrock demo" width="800">
+</p>
+
 ## Compatibility and Dependencies
 
 | Component | Requirements and Compatibility |
