@@ -1,4 +1,4 @@
- <p align="center">
+<p align="center">
   <img src="img/LiteSignInBedrock.png" alt="LiteSignInBedrock Logo" width="128">
 </p>
 
