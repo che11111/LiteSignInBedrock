@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>dev.che1s</groupId>
+    <artifactId>LiteSignInBedrock</artifactId>
+    <version>1.1.2</version>
+    <packaging>jar</packaging>
+    <name>LiteSignInBedrock</name>
+    <description>Bedrock Edition sign-in form addon for LiteSignIn</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <bukkit.api.group>org.spigotmc</bukkit.api.group>
+        <bukkit.api.artifact>spigot-api</bukkit.api.artifact>
+        <bukkit.api.version>1.13-R0.1-SNAPSHOT</bukkit.api.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>spigot</id>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+        </repository>
+        <repository>
+            <id>opencollab</id>
+            <url>https://repo.opencollab.dev/main/</url>
+        </repository>
+        <repository>
+            <id>opencollab-snapshots</id>
+            <url>https://repo.opencollab.dev/snapshots/</url>
+        </repository>
+        <repository>
+            <id>papermc</id>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>placeholderapi</id>
+            <url>https://repo.extendedclip.com/releases/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.bstats</groupId>
+            <artifactId>bstats-base</artifactId>
+            <version>3.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Bukkit/Paper API -->
+        <dependency>
+            <groupId>${bukkit.api.group}</groupId>
+            <artifactId>${bukkit.api.artifact}</artifactId>
+            <version>${bukkit.api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Floodgate API (Bedrock detection + form sending) -->
+        <dependency>
+            <groupId>org.geysermc.floodgate</groupId>
+            <artifactId>api</artifactId>
+            <version>2.2.2-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Cumulus (form components used by Floodgate) -->
+        <dependency>
+            <groupId>org.geysermc.cumulus</groupId>
+            <artifactId>cumulus</artifactId>
+            <version>1.1.2</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- PlaceholderAPI (optional, for %litesignin_xxx% placeholders) -->
+        <dependency>
+            <groupId>me.clip</groupId>
+            <artifactId>placeholderapi</artifactId>
+            <version>2.11.5</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- LiteSignIn (build it first, then: mvn install:install-file) -->
+        <dependency>
+            <groupId>studio.trc</groupId>
+            <artifactId>LiteSignIn</artifactId>
+            <version>1.9.0</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>LiteSignInBedrock-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.6.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>shade</goal></goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <artifactSet><includes>
+                                <include>org.bstats:bstats-base</include>
+                                <include>com.google.code.gson:gson</include>
+                            </includes></artifactSet>
+                            <relocations>
+                                <relocation><pattern>org.bstats</pattern><shadedPattern>dev.che1s.litesigninbedrock.libs.bstats</shadedPattern></relocation>
+                                <relocation><pattern>com.google.gson</pattern><shadedPattern>dev.che1s.litesigninbedrock.libs.gson</shadedPattern></relocation>
+                            </relocations>
+                            <filters><filter><artifact>*:*</artifact><excludes>
+                                <exclude>META-INF/*.SF</exclude><exclude>META-INF/*.RSA</exclude><exclude>META-INF/*.DSA</exclude>
+                                <exclude>META-INF/versions/**</exclude><exclude>module-info.class</exclude>
+                            </excludes></filter></filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

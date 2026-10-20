@@ -1,0 +1,90 @@
+# English. Editable; missing entries are added on startup or reload.
+form:
+  main:
+    title: "Daily Sign-In"
+    signed-in: "Signed in"
+    not-signed-in: "Not signed in"
+    status-format: "Today: {status}\nStreak: {continuous} days\nTotal: {total} days\nThis month: {month} days\nMake-up cards: {cards}\nToday's rank: {queue}"
+    button-sign-in: "Sign in"
+    button-signed: "Already signed in today"
+    button-retroactive: "Make-up sign-in"
+    button-records: "Sign-in records"
+  retroactive:
+    title: "Make-up Sign-In"
+    content: "Choose a missed date\nYour make-up cards: {cards}\nCards required per date: {required}"
+    empty: "No missed dates available in this period"
+    button-back: "Back"
+    button-date: "{date}  ({required} cards)"
+    button-prev: "Previous page"
+    button-next: "Next page"
+    page-format: "Page {page}/{pages} · {count} available dates"
+  records:
+    title: "Sign-In Records"
+    header: "{year}-{month}: signed in on {count} days"
+    summary: "Days elapsed: {elapsed}/{total} · Sign-in rate: {rate}%\nMissed: {missed} days (excluding today)"
+    today-format: 'Today (day {date}): {status}'
+    label-signed: "Signed in"
+    label-missed: "Missed"
+    label-today: "Pending"
+    label-future: "Upcoming"
+    button-current: "Current month"
+    signed: '&a☑'
+    missed: '&c☒'
+    future: '&7□'
+    pending: '&e?'
+    cell-format: '[{day}{mark}]'
+    cell-separator: ' '
+    legend: "{signed} Signed in  {missed} Missed\n{pending} Pending today  {future} Upcoming"
+    button-prev: "Previous month"
+    button-next: "Next month"
+    button-back: "Back"
+messages:
+  prefix: "&bSign-In &f» "
+  no-permission: "{prefix}&cYou do not have permission to use this feature."
+  bedrock-only: "{prefix}&cThis feature is only available to Bedrock players."
+  sign-in-success: "{prefix}&aSigned in! Your streak is &e{continuous}&a days."
+  sign-in-cancelled: "{prefix}&cSign-in did not complete. Server rules may have cancelled it. Please try again later."
+  sign-in-already: "{prefix}&cYou have already signed in today."
+  sign-in-disabled-world: "{prefix}&cYou cannot sign in in this world."
+  sign-in-insufficient-time: "{prefix}&cNot enough online time. Please wait &e{minute}&c more minute(s)."
+  retroactive-success: "{prefix}&aMade up sign-in for &e{date}&a. Your streak is &e{continuous}&a days."
+  retroactive-invalid-date: "{prefix}&cThis date is invalid or in the future. Please reopen the make-up menu."
+  retroactive-disabled: "{prefix}&cMake-up sign-in is disabled on this server."
+  retroactive-cooldown: "{prefix}&cMake-up sign-in is on cooldown. Please wait &e{second}&c second(s)."
+  retroactive-minimum-date: "{prefix}&cThis date is earlier than the earliest allowed make-up date."
+  retroactive-need-more: "{prefix}&cYou need &e{cards}&c more make-up card(s)."
+  update-available: "{prefix}&aVersion &e{latest}&a is available (current: {current}): &b{url}"
+date:
+  format: "{month}/{day} {weekday}"
+  full-format: "{year}/{date}"
+  weekdays: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+command:
+  players-only: "Only players can use this command."
+  usage: "{prefix}&eUsage: /{label} [reload]"
+  reload-success: "{prefix}&aConfiguration and language files reloaded."
+  reload-failed: "{prefix}&cReload failed. Check the console; invalid files were not overwritten."
+  no-permission: "{prefix}&cYou do not have permission to use this feature."
+logs:
+  enabled: "LiteSignInBedrock {version} enabled. Language: {language}."
+  disabled: "LiteSignInBedrock disabled."
+  missing-command: "Could not register /litesigninbedrock. Check plugin.yml and restart the server."
+  storage-unavailable: "Could not load sign-in data for {player}."
+  main-failed: "Could not open the main sign-in form."
+  signin-failed: "Sign-in failed."
+  retroactive-failed: "Could not open the make-up sign-in form."
+  retroactive-action-failed: "Make-up sign-in failed."
+  records-failed: "Could not open sign-in records."
+  form-send-failed: "Could not send a sign-in form to {player}."
+  invalid-history: "Ignoring an invalid sign-in history date: {date}"
+  player-task-failed: "Could not schedule a player sign-in task."
+  reload-failed: "Could not reload configuration or language files."
+  language-unknown: "Unknown language {language}; falling back to zh_CN."
+  language-read-failed: "Could not read language file {file}; using bundled translations: {error}"
+  language-save-failed: "Could not save language file {file}; using bundled translations: {error}"
+  config-save-failed: "Could not add missing config.yml defaults: {error}"
+  update-available: "Version {latest} is available (current: {current}): {url}"
+  update-failed: "Could not check GitHub for updates; will retry at the next scheduled check: {error}"
+  metrics-failed: "Could not initialize bStats; sign-in is unaffected: {error}"
+  global-task-failed: 'Could not schedule a global plugin task.'
+  plugin-detected: 'Detected {plugin} {version}.'
+  geyser-external: 'Geyser-Spigot was not detected locally. If Geyser runs on a proxy or standalone, ensure floodgate forwarding is configured correctly.'

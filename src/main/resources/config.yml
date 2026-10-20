@@ -1,0 +1,22 @@
+# LiteSignInBedrock
+# 文案在 lang/<language>.yml 中修改 / Edit text in lang/<language>.yml.
+language: zh_CN
+
+# 启动5秒后及每6小时检查 GitHub Release ，仅提醒，不自动安装。
+# Check stable GitHub releases after 5 seconds and every 6 hours; notify only.
+check-for-updates: true
+
+# 进服自动弹出签到表单 / Automatically open the sign-in form on join.
+auto-open-on-join: false
+# 延迟秒数，0–86400 / Delay in seconds, 0–86400.
+auto-open-delay: 1
+# 补签回溯天数，0–3660；每页10个日期，返回始终在首位。
+# Make-up lookback, 0–3660 days; 10 dates per page with Back first.
+retroactive-days: 30
+# 包含本月的可查看月份数，最早为1970年1月。
+# Browsable months including the current month, no earlier than January 1970.
+records-months: 12
+
+# bstats
+bstats:
+  enabled: true

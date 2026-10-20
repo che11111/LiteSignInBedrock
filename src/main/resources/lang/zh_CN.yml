@@ -1,0 +1,96 @@
+# 简体中文。可编辑；缺失文案在启动或重载时补齐。
+form:
+  main:
+    title: '每日签到'
+    signed-in: '已签到'
+    not-signed-in: '未签到'
+    status-format: "今日签到: {status}\n连续签到: {continuous} 天\n累计签到: {total} 天\n本月累计: {month} 天\n补签卡: {cards} 张\n今日排名: {queue}"
+    button-sign-in: '签到'
+    button-signed: '今日已签到'
+    button-retroactive: '补签'
+    button-records: '签到记录'
+  retroactive:
+    title: '补签'
+    content: "选择要补签的日期\n当前补签卡: {cards} 张\n每次补签需要 {required} 张补签卡"
+    empty: '最近没有可补签的日期'
+    button-back: '返回'
+    button-date: '{date}  (需 {required} 张补签卡)'
+    button-prev: '上一页'
+    button-next: '下一页'
+    page-format: '第 {page}/{pages} 页 · 共 {count} 天可补签'
+  records:
+    title: '签到记录'
+    header: '{year}年{month}月 已签到 {count} 天'
+    # 签到率按截至今日的日期计算；漏签不包含今日和未来日期
+    summary: "已过 {elapsed}/{total} 天 · 签到率 {rate}%\n漏签 {missed} 天（不含今日）"
+    today-format: '今日 {date}日：{status}'
+    label-signed: '已签到'
+    label-missed: '漏签'
+    label-today: '待签到'
+    label-future: '未到日期'
+    button-current: '回到本月'
+    signed: '&a☑'
+    missed: '&c☒'
+    future: '&7□'
+    pending: '&e?'
+    cell-format: '[{day}{mark}]'
+    cell-separator: ' '
+    legend: "{signed} 已签到  {missed} 漏签\n{pending} 今日待签到  {future} 未到日期"
+    button-prev: '上个月'
+    button-next: '下个月'
+    button-back: '返回'
+
+# 聊天提示信息（支持 & 颜色代码，支持 %litesignin_xxx% 占位符）
+messages:
+  prefix: '&b签到&3系统 &f&l>>> '
+  update-available: '{prefix}&a发现新版 &e{latest}&a（当前 {current}）：&b{url}'
+  no-permission: '{prefix}&c你没有权限使用此功能。'
+  bedrock-only: '{prefix}&c此功能仅限基岩版玩家使用。'
+  sign-in-success: '{prefix}&a今日签到成功，已连续签到 &e{continuous} &a天。'
+  sign-in-cancelled: '{prefix}&c签到未完成，可能被服务器规则取消，请稍后重试。'
+  sign-in-already: '{prefix}&c你今天已经签到了。'
+  sign-in-disabled-world: '{prefix}&c当前世界无法进行签到。'
+  sign-in-insufficient-time: '{prefix}&c在线时间不足，请等待 &e{minute} &c分钟后再签到。'
+  retroactive-success: '{prefix}&a补签成功：&e{date}&a，已连续签到 &e{continuous} &a天。'
+  retroactive-invalid-date: '{prefix}&c该日期无效或尚未到来，请重新打开补签页面。'
+  retroactive-disabled: '{prefix}&c本服务器未启用补签功能。'
+  retroactive-cooldown: '{prefix}&c补签冷却中，请等待 &e{second} &c秒。'
+  retroactive-minimum-date: '{prefix}&c该日期早于可补签的最早日期。'
+  retroactive-need-more: '{prefix}&c补签卡不足，还需 &e{cards} &c张。'
+
+date:
+  format: '{month}月{day}日 {weekday}'
+  full-format: '{year}年{date}'
+  weekdays: [周一, 周二, 周三, 周四, 周五, 周六, 周日]
+
+command:
+  players-only: '该命令只能由玩家执行。'
+  usage: '{prefix}&e用法：/{label} [reload]'
+  reload-success: '{prefix}&a配置与语言文件已重载。'
+  reload-failed: '{prefix}&c重载失败，请查看控制台；无效文件未被覆盖。'
+  no-permission: '{prefix}&c你没有权限使用此功能。'
+
+logs:
+  enabled: 'LiteSignInBedrock {version} 已启用，语言：{language}。'
+  disabled: 'LiteSignInBedrock 已关闭。'
+  missing-command: '无法注册 /litesigninbedrock，请检查 plugin.yml 并重启服务器。'
+  storage-unavailable: '无法获取玩家 {player} 的签到数据。'
+  main-failed: '打开主签到表单时发生错误。'
+  signin-failed: '执行签到操作时发生错误。'
+  retroactive-failed: '打开补签表单时发生错误。'
+  retroactive-action-failed: '执行补签操作时发生错误。'
+  records-failed: '打开签到记录表单时发生错误。'
+  form-send-failed: '无法向玩家 {player} 发送签到表单。'
+  invalid-history: '忽略无效签到历史日期：{date}'
+  player-task-failed: '无法调度玩家签到任务。'
+  reload-failed: '重载配置或语言失败。'
+  language-unknown: '未知语言 {language}，回退到 zh_CN。'
+  language-read-failed: '无法读取语言文件 {file}，使用内置文案：{error}'
+  language-save-failed: '无法保存语言文件 {file}，使用内置文案：{error}'
+  config-save-failed: '无法补齐 config.yml 缺失配置：{error}'
+  update-available: '发现新版 {latest}（当前 {current}）：{url}'
+  update-failed: 'GitHub 更新检查失败，将在下次定时检查时重试：{error}'
+  metrics-failed: 'bStats 初始化失败，不影响签到功能：{error}'
+  global-task-failed: '无法调度全局插件任务。'
+  plugin-detected: '已检测到 {plugin} {version}。'
+  geyser-external: '本服未检测到 Geyser-Spigot；若 Geyser 部署在代理端或独立运行，请确保 floodgate 转发配置正确。'

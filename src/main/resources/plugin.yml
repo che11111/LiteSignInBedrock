@@ -1,0 +1,25 @@
+name: LiteSignInBedrock
+version: 1.1.2
+main: dev.che1s.litesigninbedrock.LiteSignInBedrock
+author: che1s
+website: https://github.com/che11111/LiteSignInBedrock
+api-version: 1.16
+folia-supported: true
+description: Bedrock Edition sign-in form addon for LiteSignIn.
+depend:
+  - LiteSignIn
+  - floodgate
+  - PlaceholderAPI
+softdepend:
+  - Geyser-Spigot
+commands:
+  litesigninbedrock:
+    description: Open the Bedrock sign-in form.
+    aliases: [besignin]
+permissions:
+  litesigninbedrock.use:
+    description: Allow using the Bedrock sign-in form.
+    default: true
+  litesigninbedrock.admin:
+    description: Reload settings and receive update notices.
+    default: op
