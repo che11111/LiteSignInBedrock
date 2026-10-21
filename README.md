@@ -22,17 +22,18 @@
 
 LiteSignInBedrock is a Bukkit addon for [LiteSignIn](https://www.spigotmc.org/resources/79584/). It allows Bedrock Edition players connecting through Geyser and Floodgate to sign in, perform retroactive sign-ins, and view sign-in records through native Bedrock forms. Rewards and data storage are still handled by LiteSignIn. This README also serves as the installation, configuration, and administration manual.
 
+## Demo
+
+<p align="center">
+  <img src="img/202610294003846.gif" alt="LiteSignInBedrock demo" width="800">
+</p>
+
 ## Features
 
 - Three form pages: a main sign-in and information page, a monthly sign-in records page, and a retroactive sign-in page.
 - The main page displays today's sign-in status, consecutive sign-in streak, total sign-in days, sign-ins this month, available retroactive sign-in cards, and today's ranking.
 - One-click sign-in, with checks for LiteSignIn permissions, disabled worlds, online time requirements, and duplicate sign-ins.
 
-## Demo
-
-<p align="center">
-  <img src="img/202610294003846.gif" alt="LiteSignInBedrock demo" width="800">
-</p>
 
 ## Compatibility and Dependencies
 
