@@ -105,21 +105,7 @@ records-months: 12
 
 Retroactive sign-in cards, reward groups, disabled worlds, and other sign-in rules are configured in **LiteSignIn**.
 
-### Internal Placeholders
 
-Placeholders are only available in their respective templates. The meanings of `{month}`, `{total}`, and `{cards}` vary depending on the context.
-
-| Template or Section | Available Placeholders |
-| --- | --- |
-| `form.main.status-format` | `{status}`, `{continuous}`, `{total}` (total sign-in days), `{month}` (sign-in days this month), `{cards}` (number of cards held), `{queue}` |
-| `form.retroactive.content` / `page-format` | `{cards}`, `{required}`, `{page}`, `{pages}`, `{count}` (number of dates available for retroactive sign-in) |
-| `form.retroactive.button-date` | `{date}` (full date including the year), `{required}` |
-| Records page header / summary / today templates | `{year}`, `{month}` (month number), `{count}` (number of signed-in days), `{missed}`, `{elapsed}`, `{total}` (number of days in the month), `{rate}`. The today template also supports `{status}` and `{date}` (today's day of the month). |
-| `form.records.cell-format` / `legend` | `{day}` (two-digit day of the month) and `{mark}` for the cell format; `{signed}`, `{missed}`, `{pending}`, `{future}` for the legend. |
-| `date.format` | `{year}`, `{month}`, `{day}`, `{weekday}` |
-| `date.full-format` | `{year}`, `{date}` |
-| Sign-in chat messages | `{prefix}`; success messages also support `{continuous}`; retroactive sign-in success messages additionally support `{date}`; waiting messages support `{minute}` or `{second}`; insufficient-card messages use `{cards}` (number of additional cards required). |
-| Update notifications | `{latest}`, `{current}`, `{url}`; chat messages also support `{prefix}`. |
 
 ## Frequently Asked Questions and Limitations
 
